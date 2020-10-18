@@ -1,10 +1,13 @@
 
-# **The Ultimate MySQL Bootcamp Go from SQL Beginner to Expert**
+# **The Ultimate MySQL Bootcamp go from SQL Beginner to Expert**
 
-Course Content
-- sdfdsf
-- sdsdfsd
-- sdfsdf
+# **Course Content**
+- Linux MySQL Installation
+- Create Databases and Tables
+- String Functions, Aggregation Functions
+- JOINS: Inner, Left, Right and amoung more than two tables
+- Instagram Project: Build Database and Tables.
+- Website Development using node.js
 
 
 # **My SQL Installation**
