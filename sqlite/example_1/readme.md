@@ -44,7 +44,11 @@ file simple_app/app.py execute those function in a sequential order.
 In folder db_created/ we find the database created. Before run the simple_app/app.py
 we need to copy db_created/customer.db to folder simple_app/ . 
  
- 
+# **Result from "app"
+
+![app_sqlite](https://user-images.githubusercontent.com/37953610/96522845-3c28b200-126c-11eb-89d0-5f260ade57af.png)
+
+
  **More Information**
 
 [SQLite Tutorial](https://www.pythoncentral.io/series/python-sqlite-database-tutorial/)
