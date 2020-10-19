@@ -52,5 +52,9 @@ we need to copy db_created/customer.db to folder simple_app/ .
  **More Information**
 
 [SQLite Tutorial](https://www.pythoncentral.io/series/python-sqlite-database-tutorial/)
+[SQLite Tutorial 2](http://zetcode.com/db/sqlitepythontutorial/)
+[SQLite TowardsDataScience](https://towardsdatascience.com/python-sqlite-tutorial-the-ultimate-guide-fdcb8d7a4f30)
+[SQLite Medium](https://medium.com/swlh/data-analysis-sqlite3-in-python-1868903eaee)
+[SQLite Analytics Vidhya](https://www.analyticsvidhya.com/blog/2020/06/sql-for-beginners-analysts-sqlite-database-python/)
 
 
