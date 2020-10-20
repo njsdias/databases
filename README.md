@@ -1,3 +1,6 @@
 # Databases
 
-COntent related with databases like MYSQL, NoSQL
+Content related with databases:
+- MYSQL,
+- SQLIte,
+- NoSQL
