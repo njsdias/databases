@@ -49,8 +49,12 @@ def show_df():
     conn, c = connect_db_cursor()
     # df = pd.read_sql("SELECT * FROM veds LIMIT 5", conn)
     # df = pd.read_sql("SELECT VehId, COUNT(VehId) AS total FROM veds GROUP BY VehId LIMIT 10", conn)
-    df = pd.read_sql("SELECT * FROM veds", conn)
-    print(df)
+
+    c.execute("DROP TABLE signals")
+    conn.commit()
+
+    #df = pd.read_sql("SELECT * FROM signals", conn)
+    #print(df)
 
 
 # show all results
