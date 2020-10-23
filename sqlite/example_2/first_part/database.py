@@ -10,29 +10,30 @@ c = conn.cursor()
 
 # create table
 c.execute(""" 
-        CREATE TABLE IF NOT EXISTS veds(
-             DayNum real,
-             VehId int64,
-             Trip int64,
-             Timestamp_ms real,
-             Latitude_deg real,
-             Longitude_deg real,
-             VehicleSpeed_km_h real,
-             MAF_g_sec real,
-             Engine_rpm real,
-             AbsoluteLoad_perc real,
-             OAT_celcius real,
-             FuelRate_L_h real,
-             AirConditioningPower_kw real,
-             AirConditioningPower_w real,
-             HeaterPower_w real,
-             HVBatteryCurrent_a real,
-             HVBatterySOC real,
-             HVBattery real,
-             ShortTermFuelTrimBank1 real,
-             ShortTermFuelTrimBank2 real,
-             LongTermFuelTrimBank1 real,
-             LongTermFuelTrimBank2 real
+        CREATE TABLE IF NOT EXISTS signals (
+            signal_id       INTEGER PRIMARY KEY ASC,
+            day_num         FLOAT NOT NULL,
+            vehicle_id      INT NOT NULL,
+            trip_id         INT NOT NULL,
+            time_stamp      INT NOT NULL,
+            latitude        FLOAT NOT NULL,
+            longitude       FLOAT NOT NULL,
+            speed           FLOAT,
+            maf             FLOAT,
+            rpm             FLOAT,
+            abs_load        FLOAT,
+            oat             FLOAT,
+            fuel_rate       FLOAT,
+            ac_power_kw     FLOAT,
+            ac_power_w      FLOAT,
+            heater_power_w  FLOAT,
+            hv_bat_current  FLOAT,
+            hv_bat_soc      FLOAT,
+            hv_bat_volt     FLOAT,
+            st_ftb_1        FLOAT,
+            st_ftb_2        FLOAT,
+            lt_ftb_1        FLOAT,
+            lt_ftb_2        FLOAT
         )""")
 
 conn.commit()
@@ -46,6 +47,36 @@ df = pd.read_csv("dataset/VED_171101_week.csv", sep=",")
 
 rows = [row for name, row in df.iterrows()]
 print("\n Inserting Values...")
+
 c.executemany("""
-    INSERT INTO veds VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", rows)
+    INSERT INTO signals (
+        day_num,
+        vehicle_id,
+        trip_id,
+        time_stamp,
+        latitude,
+        longitude,
+        speed,
+        maf,
+        rpm,
+        abs_load,
+        oat,
+        fuel_rate,
+        ac_power_kw,
+        ac_power_w,
+        heater_power_w,
+        hv_bat_current,
+        hv_bat_soc,
+        hv_bat_volt,
+        st_ftb_1,
+        st_ftb_2,
+        lt_ftb_1,
+        lt_ftb_2
+    )
+    VALUES (
+        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+        ?, ?
+    )""", rows)
+
 conn.commit()
