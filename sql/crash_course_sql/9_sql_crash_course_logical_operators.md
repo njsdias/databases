@@ -172,14 +172,14 @@ Imagine you want categorize the book quantities with stars:
 
 - Select all books with page counts between 100 and 200.
 
-    SELECT title, pages FROM books
-    WHERE  pages BETWEEN 100 AND 200;
+      SELECT title, pages FROM books
+      WHERE  pages BETWEEN 100 AND 200;
 
 - Select all books where author_lname starts with a 'C or and 'S'
 
-    SELECT author_lname, title FROM books
-    WHERE author_lname LIKE 'C%' OR
-          author_lname LIKE 'S%';
+      SELECT author_lname, title FROM books
+      WHERE author_lname LIKE 'C%' OR
+            author_lname LIKE 'S%';
 
 - Categorize 'title' as:
     - if contains 'stories' -> 'Short Stories'
